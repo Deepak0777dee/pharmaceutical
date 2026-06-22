@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STACKLY PHARMA — Pioneering Tomorrow's Health Solutions</title>
+  <meta name="description" content="STACKLY PHARMA is a leading pharmaceutical company dedicated to innovative drug research." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bento.css" />
+  <style>
+    /* Ensure the body gets the alternate light background to contrast the white bento boxes */
+    body { background: var(--bg-alt); padding-top: 0; } 
+    /* Hide the old fixed navbar on index page specifically since we use bento-nav now */
+    #main-navbar { display: none; }
+  </style>
+</head>
+<body>
+
+<div id="page-loader" role="status" aria-label="Loading">
+  <div class="loader-logo"><img src="images/logo-stackly.webp" alt="STACKLY PHARMA" /></div>
+  <div class="loader-bar"></div>
+  <span class="loader-text">Loading Experience</span>
+</div>
+
+<nav class="navbar"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><img src="images/logo-stackly.webp" alt="STACKLY PHARMA" /></a>
+  <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <div class="nav-login-btn-wrap"><a href="login.html" class="nav-login-btn">Login</a></div>
+  <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="contact.html">Contact</a><div class="mobile-login-wrap"><a href="login.html" style="display:flex;align-items:center;justify-content:center;padding:0.8rem;border-radius:999px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;font-weight:700;font-size:0.9rem;">Login</a></div></div>
+
+<div class="bento-container" style="padding-top: 100px;" data-anim="scale-in">
+  
+  <!-- BENTO HERO -->
+  <div class="bento-box bento-hero">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="bento-hero-video">
+      <source src="images/no_remove_those_texts_i_do_not.mp4" type="video/mp4">
+    </video>
+
+    <!-- Bottom Content -->
+    <div class="bento-hero-bottom">
+      <h1 class="bento-hero-title">Bringing Health To Your Doorstep</h1>
+      <a href="products.html" class="bento-hero-explore">Explore</a>
+    </div>
+
+  </div>
+
+  <!-- BENTO CATEGORIES (3-Column) -->
+  <div class="bento-categories">
+    
+    <div class="bento-box bento-cat-card blue" data-anim="fade-up" data-delay="100">
+      <h2 class="bento-cat-title">Prescription<br>medicine</h2>
+      <img src="images/bento-cat-rx.webp" alt="Prescription Medicine" class="bento-cat-img" />
+      <div class="bento-cat-bottom">
+        <div class="bento-cat-desc">Over 1000+ prescription meds at your fingertips</div>
+        <a href="products.html" class="bento-cat-arrow" aria-label="Go to prescription medicine">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="9 5 19 5 19 15"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="bento-box bento-cat-card green" data-anim="fade-up" data-delay="200">
+      <h2 class="bento-cat-title">Surgical<br>product</h2>
+      <img src="images/bento-cat-surg.webp" alt="Surgical Products" class="bento-cat-img" style="border-radius:0; width:100%; top:60%; transform:translate(-50%,-50%);" /> <!-- adjusted styling for better fit depending on generated image -->
+      <div class="bento-cat-bottom">
+        <div class="bento-cat-desc">Trusted surgical tools at your disposal</div>
+        <a href="products.html" class="bento-cat-arrow" aria-label="Go to surgical products">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="9 5 19 5 19 15"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="bento-box bento-cat-card yellow" data-anim="fade-up" data-delay="300">
+      <h2 class="bento-cat-title">Supplements<br>& vitamins</h2>
+      <img src="images/bento-cat-vits.webp" alt="Supplements & vitamins" class="bento-cat-img" style="border-radius:0; width:100%; top:60%; transform:translate(-50%,-50%);"/>
+      <div class="bento-cat-bottom">
+        <div class="bento-cat-desc">Essential nutrients for a healthier you</div>
+        <a href="products.html" class="bento-cat-arrow" aria-label="Go to supplements">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="9 5 19 5 19 15"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BENTO TAGS HORIZONTAL MARQUEE -->
+  <div class="bento-marquee-container" data-anim="fade-up" data-delay="400">
+    
+    <!-- Row 1: Forward Marquee -->
+    <div class="bento-marquee-track">
+      <!-- Original Set -->
+      <a href="products.html" class="bento-tag-rect">
+        Diabetes Care <div class="bento-tag-rect-icon" style="background:#e0f2fe; color:#0ea5e9;">🩸</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Vitamins & Supplements <div class="bento-tag-rect-icon" style="background:#fef9c3; color:#eab308;">💊</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Pain Relief <div class="bento-tag-rect-icon" style="background:#dcfce7; color:#22c55e;">🟢</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Allergy <div class="bento-tag-rect-icon" style="background:#ffe4e6; color:#f43f5e;">🤧</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Immunity <div class="bento-tag-rect-icon" style="background:#f3e8ff; color:#a855f7;">🛡️</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Cold & Flu <div class="bento-tag-rect-icon" style="background:#ffedd5; color:#f97316;">🌡️</div>
+      </a>
+      <!-- Duplicated Set for infinite scroll -->
+      <a href="products.html" class="bento-tag-rect">
+        Diabetes Care <div class="bento-tag-rect-icon" style="background:#e0f2fe; color:#0ea5e9;">🩸</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Vitamins & Supplements <div class="bento-tag-rect-icon" style="background:#fef9c3; color:#eab308;">💊</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Pain Relief <div class="bento-tag-rect-icon" style="background:#dcfce7; color:#22c55e;">🟢</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Allergy <div class="bento-tag-rect-icon" style="background:#ffe4e6; color:#f43f5e;">🤧</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Immunity <div class="bento-tag-rect-icon" style="background:#f3e8ff; color:#a855f7;">🛡️</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Cold & Flu <div class="bento-tag-rect-icon" style="background:#ffedd5; color:#f97316;">🌡️</div>
+      </a>
+    </div>
+
+    <!-- Row 2: Reverse Marquee -->
+    <div class="bento-marquee-track reverse">
+      <!-- Original Set -->
+      <a href="products.html" class="bento-tag-rect">
+        Skin Care Treatments <div class="bento-tag-rect-icon" style="background:#dcfce7; color:#22c55e;">🧴</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Mental Wellness <div class="bento-tag-rect-icon" style="background:#e0e7ff; color:#6366f1;">🧠</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Bone & Joint Support <div class="bento-tag-rect-icon" style="background:#ffe4e6; color:#f43f5e;">🦴</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Heart Health <div class="bento-tag-rect-icon" style="background:#fce7f3; color:#ec4899;">❤️</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Digestive Care <div class="bento-tag-rect-icon" style="background:#fef3c7; color:#f59e0b;">🍏</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        First Aid <div class="bento-tag-rect-icon" style="background:#cffafe; color:#06b6d4;">🩹</div>
+      </a>
+      <!-- Duplicated Set for infinite scroll -->
+      <a href="products.html" class="bento-tag-rect">
+        Skin Care Treatments <div class="bento-tag-rect-icon" style="background:#dcfce7; color:#22c55e;">🧴</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Mental Wellness <div class="bento-tag-rect-icon" style="background:#e0e7ff; color:#6366f1;">🧠</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Bone & Joint Support <div class="bento-tag-rect-icon" style="background:#ffe4e6; color:#f43f5e;">🦴</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Heart Health <div class="bento-tag-rect-icon" style="background:#fce7f3; color:#ec4899;">❤️</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        Digestive Care <div class="bento-tag-rect-icon" style="background:#fef3c7; color:#f59e0b;">🍏</div>
+      </a>
+      <a href="products.html" class="bento-tag-rect">
+        First Aid <div class="bento-tag-rect-icon" style="background:#cffafe; color:#06b6d4;">🩹</div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- BENTO FEATURED PRODUCTS -->
+  <div class="bento-products-grid" data-anim="fade-up">
+    <div class="bento-product-card">
+      <div class="bento-product-cat">Antibacterial</div>
+      <div class="bento-product-title">Cloroxomin</div>
+      <div class="bento-product-img-wrap"><img src="images/product-onco.webp" alt="Cloroxomin" class="bento-product-img"></div>
+      <div class="bento-product-price">$34.00</div>
+      <button class="bento-product-btn">Shop Now</button>
+    </div>
+    <div class="bento-product-card">
+      <div class="bento-product-cat">Pain Killer</div>
+      <div class="bento-product-title">The Killer</div>
+      <div class="bento-product-img-wrap"><img src="images/product-neuro.webp" alt="The Killer" class="bento-product-img"></div>
+      <div class="bento-product-price">$29.00</div>
+      <button class="bento-product-btn">Shop Now</button>
+    </div>
+    <div class="bento-product-card">
+      <div class="bento-product-cat">Fingernails</div>
+      <div class="bento-product-title">Onychobath</div>
+      <div class="bento-product-img-wrap"><img src="images/product-cardio.webp" alt="Onychobath" class="bento-product-img"></div>
+      <div class="bento-product-price">$66.00</div>
+      <button class="bento-product-btn">Shop Now</button>
+    </div>
+    <div class="bento-product-card">
+      <div class="bento-product-cat">Pain Killer</div>
+      <div class="bento-product-title">Medrelief</div>
+      <div class="bento-product-img-wrap"><img src="images/bento-bottle-yellow.webp" alt="Medrelief" class="bento-product-img"></div>
+      <div class="bento-product-price">$48.00</div>
+      <button class="bento-product-btn">Shop Now</button>
+    </div>
+  </div>
+
+  <!-- BENTO PROMO ASYMMETRIC GRID -->
+  <div class="bento-promo-grid" data-anim="fade-up">
+    <div class="bento-promo-left">
+      <div class="bento-promo-card green">
+        <h2 class="bento-promo-title">Exclusive pain Relief formula</h2>
+        <p class="bento-promo-desc">Fast-acting pain relief for headaches, joint pain, and more.</p>
+        <button class="btn btn-dark" style="position:relative;z-index:2;width:fit-content;">Explore</button>
+        <img src="images/bento-bottle-green.webp" alt="Pain Relief" class="bento-promo-img" style="right:-10%;transform:rotate(15deg);">
+      </div>
+      <div class="bento-promo-card peach">
+        <h2 class="bento-promo-title">RestEase Sleep Support</h2>
+        <p class="bento-promo-desc">Restful sleep, helping you fall asleep faster and wake up refreshed.</p>
+        <button class="btn btn-dark" style="position:relative;z-index:2;width:fit-content;">Explore</button>
+        <img src="images/bento-cat-vits.webp" alt="Sleep Support" class="bento-promo-img" style="border-radius:50%;width:80%;bottom:-30%;right:-20%;">
+      </div>
+    </div>
+    <div>
+      <div class="bento-promo-card blue">
+        <h2 class="bento-promo-title" style="max-width:80%;">Soothing skin repair cream</h2>
+        <p class="bento-promo-desc" style="max-width:70%;">Deeply hydrates, heals, and restores dry, irritated skin for a radiant glow.</p>
+        <button class="btn btn-dark" style="position:relative;z-index:2;width:fit-content;margin-bottom:auto;">Explore</button>
+        <img src="images/bento-cat-rx.webp" alt="Repair Cream" class="bento-promo-img" style="right:0;bottom:-5%;width:100%;object-fit:cover;mix-blend-mode:normal;border-radius:24px;">
+      </div>
+    </div>
+  </div>
+
+  <!-- BENTO VITAMINS PRODUCTS -->
+  <div class="bento-products-grid" data-anim="fade-up">
+    <div class="bento-product-card">
+      <div class="bento-product-cat">Vitamins</div>
+      <div class="bento-product-title">Biotin Supplement</div>
+      <div class="bento-product-img-wrap"><img src="images/bento-bottle-blue.webp" alt="Biotin" class="bento-product-img"></div>
+      <div class="bento-product-price">$56.00</div>
+      <button class="bento-product-btn">Shop Now</button>
+    </div>
+    <div class="bento-product-card">
+      <div class="bento-product-cat">Vitamins</div>
+      <div class="bento-product-title">Goji Berry</div>
+      <div class="bento-product-img-wrap"><img src="images/bento-bottle-green.webp" alt="Goji" class="bento-product-img" style="filter: hue-rotate(280deg);"></div> <!-- Quick hue trick to make it pink/redish for now -->
+      <div class="bento-product-price">$65.00</div>
+      <button class="bento-product-btn">Shop Now</button>
+    </div>
+    <div class="bento-product-card">
+      <div class="bento-product-cat">Vitamins</div>
+      <div class="bento-product-title">Turmeric</div>
+      <div class="bento-product-img-wrap"><img src="images/bento-bottle-yellow.webp" alt="Turmeric" class="bento-product-img"></div>
+      <div class="bento-product-price">$84.00</div>
+      <button class="bento-product-btn">Shop Now</button>
+    </div>
+    <div class="bento-product-card">
+      <div class="bento-product-cat">Vitamins</div>
+      <div class="bento-product-title">Celluar Nutrition</div>
+      <div class="bento-product-img-wrap"><img src="images/bento-bottle-blue.webp" alt="Celluar" class="bento-product-img" style="filter: hue-rotate(150deg) saturate(2);"></div>
+      <div class="bento-product-price">$90.00</div>
+      <button class="bento-product-btn">Shop Now</button>
+    </div>
+  </div>
+
+  <!-- BENTO SOCIAL & LIFESTYLE -->
+  <div class="bento-social-grid" data-anim="fade-up">
+    <div class="bento-social-card">
+      <div class="bento-social-handle">@helsion</div>
+      <!-- Using placeholder color until quota resets, or an existing image -->
+      <div style="width:100%;height:100%;background:linear-gradient(135deg, #e0c3fc, #8ec5fc);display:flex;align-items:center;justify-content:center;"><img src="images/bento-cat-surg.webp" alt="Lifestyle" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;"></div>
+    </div>
+    <div class="bento-social-card">
+      <div class="bento-social-handle">@robinson</div>
+      <div style="width:100%;height:100%;background:linear-gradient(135deg, #a18cd1, #fbc2eb);display:flex;align-items:center;justify-content:center;"><img src="images/bento-cat-vits.webp" alt="Lifestyle" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;"></div>
+    </div>
+    <div class="bento-social-card bento-qr-card">
+      <div class="bento-qr-top">
+        <h3>Social Media</h3>
+        <h2>@pills.co</h2>
+      </div>
+      <div class="bento-qr-bottom">
+        <p>Scan to join with us</p>
+        <!-- Placeholder QR code shape -->
+        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="25" height="25" rx="4" stroke="var(--text)" stroke-width="4"/>
+          <rect x="65" y="10" width="25" height="25" rx="4" stroke="var(--text)" stroke-width="4"/>
+          <rect x="10" y="65" width="25" height="25" rx="4" stroke="var(--text)" stroke-width="4"/>
+          <rect x="45" y="10" width="10" height="10" rx="2" fill="var(--text)"/>
+          <rect x="45" y="25" width="10" height="10" rx="2" fill="var(--text)"/>
+          <rect x="15" y="45" width="10" height="10" rx="2" fill="var(--text)"/>
+          <rect x="30" y="45" width="25" height="10" rx="2" fill="var(--text)"/>
+          <rect x="65" y="45" width="10" height="25" rx="2" fill="var(--text)"/>
+          <rect x="80" y="45" width="10" height="10" rx="2" fill="var(--text)"/>
+          <rect x="80" y="80" width="10" height="10" rx="2" fill="var(--text)"/>
+          <rect x="45" y="80" width="25" height="10" rx="2" fill="var(--text)"/>
+          <rect x="45" y="60" width="10" height="10" rx="2" fill="var(--text)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- The rest of the content (Stats, Testimonials) continues normally below the bento container -->
+
+<!-- STATS BAR -->
+<section class="stats-bar" id="stats-bar" style="margin-top:0;">
+  <div class="container">
+    <div class="stats-bar-inner clay-card" data-anim="fade-up">
+      <div class="stat-item">
+        <div class="stat-value" data-count="500+">0</div>
+        <div class="stat-label">Products</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" data-count="50+">0</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" data-count="10000+">0</div>
+        <div class="stat-label">Healthcare Partners</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" data-count="99.9%">0</div>
+        <div class="stat-label">Quality Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials-section">
+  <div class="container">
+    <div class="section-header" data-anim="fade-up">
+      <h2 class="section-title">Trusted by <span class="gradient-text">Healthcare Leaders</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card" data-anim="fade-up" data-delay="100">
+        <p class="testimonial-text">"STACKLY PHARMA's cardiovascular line has been transformative for my patients. The efficacy and consistency of their medications is outstanding."</p>
+        <div class="testimonial-author">
+          <img src="images/testimonial-1.webp" alt="Dr. Rajesh Kumar" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <h4>Dr. Rajesh Kumar</h4>
+            <p>Cardiologist, Apollo Hospitals</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-anim="fade-up" data-delay="200">
+        <p class="testimonial-text">"As a pharmacist, I recommend STACKLY products with confidence. Their quality control is impeccable and patient feedback is consistently positive."</p>
+        <div class="testimonial-author">
+          <img src="images/testimonial-2.webp" alt="Dr. Priya Sharma" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <h4>Dr. Priya Sharma</h4>
+            <p>Chief Pharmacist, MedPlus</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-anim="fade-up" data-delay="300">
+        <p class="testimonial-text">"The oncology treatments from STACKLY PHARMA have shown remarkable results in our clinical practice. A truly reliable pharmaceutical partner."</p>
+        <div class="testimonial-author">
+          <img src="images/testimonial-3.webp" alt="Dr. Anita Patel" class="testimonial-avatar" />
+          <div class="testimonial-info">
+            <h4>Dr. Anita Patel</h4>
+            <p>Oncologist, Fortis Healthcare</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- BENTO HOW IT WORKS -->
+  <div class="container" style="margin-top:var(--space-2xl);">
+    <div class="section-header" data-anim="fade-up">
+      <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+    </div>
+    <div class="bento-steps" data-anim="fade-up" data-delay="100">
+      <div class="bento-step-card">
+        <div class="bento-step-num">1</div>
+        <h3 style="margin-bottom:var(--space-sm);font-weight:800;">Consult</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">Speak with our certified health professionals online.</p>
+      </div>
+      <div class="bento-step-card">
+        <div class="bento-step-num">2</div>
+        <h3 style="margin-bottom:var(--space-sm);font-weight:800;">Prescribe</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">Get tailored medication securely verified by experts.</p>
+      </div>
+      <div class="bento-step-card">
+        <div class="bento-step-num">3</div>
+        <h3 style="margin-bottom:var(--space-sm);font-weight:800;">Deliver</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">Fast, discreet delivery straight to your doorstep.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENTO WHY CHOOSE US -->
+  <div class="container" style="margin-top:var(--space-2xl);margin-bottom:var(--space-4xl);">
+    <div class="section-header" data-anim="fade-up">
+      <h2 class="section-title">Why Choose <span class="gradient-text">STACKLY</span></h2>
+    </div>
+    <div class="bento-features" data-anim="fade-up" data-delay="200">
+      <div class="bento-feature-card">
+        <div class="bento-feature-icon" style="background:#e0f2fe;color:#0ea5e9;">🛡️</div>
+        <div>
+          <h4 style="font-weight:800;margin-bottom:0.25rem;">Certified Quality</h4>
+          <p style="color:var(--text-secondary);font-size:0.85rem;">All our products undergo rigorous FDA-approved testing and quality control.</p>
+        </div>
+      </div>
+      <div class="bento-feature-card">
+        <div class="bento-feature-icon" style="background:#dcfce7;color:#22c55e;">⚡</div>
+        <div>
+          <h4 style="font-weight:800;margin-bottom:0.25rem;">Fast Delivery</h4>
+          <p style="color:var(--text-secondary);font-size:0.85rem;">Express shipping options available worldwide with cold-chain logistics.</p>
+        </div>
+      </div>
+      <div class="bento-feature-card">
+        <div class="bento-feature-icon" style="background:#fef9c3;color:#eab308;">📞</div>
+        <div>
+          <h4 style="font-weight:800;margin-bottom:0.25rem;">24/7 Support</h4>
+          <p style="color:var(--text-secondary);font-size:0.85rem;">Our medical support team is available around the clock to assist you.</p>
+        </div>
+      </div>
+      <div class="bento-feature-card">
+        <div class="bento-feature-icon" style="background:#f3e8ff;color:#a855f7;">🔒</div>
+        <div>
+          <h4 style="font-weight:800;margin-bottom:0.25rem;">Secure & Private</h4>
+          <p style="color:var(--text-secondary);font-size:0.85rem;">Your health data is encrypted and handled with the utmost confidentiality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRE-FOOTER CTA -->
+  <div class="bento-cta-wrapper" data-anim="fade-up">
+    <div class="bento-cta">
+      <h2>Ready to prioritize your health?</h2>
+      <p>Join thousands of professionals and patients who trust STACKLY PHARMA for their medical and wellness needs.</p>
+      <a href="products.html" class="btn">Shop Now</a>
+    </div>
+  </div>
+
+  <!-- BENTO FOOTER -->
+  <div class="bento-footer-wrapper">
+    <!-- The Giant Watermark stays in the background of the wrapper -->
+    <div class="footer-giant-brand" style="bottom:-5vw;">STACKLY</div>
+    
+    <footer class="bento-footer-box" id="main-footer" aria-label="Site footer">
+      <div class="footer-grid">
+        <!-- Logo & Desc -->
+        <div>
+          <div style="margin-bottom: var(--space-md);">
+            <a href="index.html" class="nav-logo">
+              <img src="images/logo-stackly.webp" alt="STACKLY PHARMA" style="height:36px;width:auto;" />
+            </a>
+          </div>
+          <p class="footer-desc">Leading pharmaceutical company dedicated to innovative drug research, manufacturing, and global distribution of life-saving medications.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Links Column 1 -->
+        <div>
+          <div class="footer-title">Product</div>
+          <ul class="footer-links">
+            <li><a href="products.html">Medicines</a></li>
+            <li><a href="products.html">Supplements</a></li>
+            <li><a href="products.html">Equipment</a></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 2 -->
+        <div>
+          <div class="footer-title">Resources</div>
+          <ul class="footer-links">
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contact.html">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 3 -->
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Partners</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 STACKLY PHARMA. All rights reserved.</p>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="#" style="color:var(--text-secondary); text-decoration:underline;">Privacy Policy</a>
+          <a href="#" style="color:var(--text-secondary); text-decoration:underline;">Terms of Service</a>
+          <a href="#" style="color:var(--text-secondary); text-decoration:underline;">Cookie Settings</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+<div id="toast-container" aria-live="polite"></div>
+
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

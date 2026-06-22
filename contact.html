@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — STACKLY PHARMA</title>
+  <meta name="description" content="Get in touch with STACKLY PHARMA. Reach out to our global headquarters or regional offices." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="page-loader" role="status" aria-label="Loading"><div class="loader-logo"><img src="images/logo-stackly.webp" alt="STACKLY PHARMA" /></div><div class="loader-bar"></div><span class="loader-text">Loading Experience</span></div>
+
+<nav class="navbar"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><img src="images/logo-stackly.webp" alt="STACKLY PHARMA" /></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <div class="nav-login-btn-wrap"><a href="login.html" class="nav-login-btn">Login</a></div>
+  <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="contact.html">Contact</a><div class="mobile-login-wrap"><a href="login.html" style="display:flex;align-items:center;justify-content:center;padding:0.8rem;border-radius:999px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;font-weight:700;font-size:0.9rem;">Login</a></div></div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-badge" data-anim="fade-up"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg> Contact Us</span>
+    <h1 data-anim="fade-up" data-delay="100">Get In <span class="gradient-text">Touch</span></h1>
+    <p data-anim="fade-up" data-delay="200">We're here to answer your questions and explore partnership opportunities.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Contact Form -->
+      <div data-anim="fade-right">
+        <h2 style="font-family:var(--font-heading);font-size:1.8rem;font-weight:800;margin-bottom:1.5rem;">Send Us a Message</h2>
+        <form id="contactForm" onsubmit="event.preventDefault(); window.showToast('Message sent successfully! We will get back to you soon.', 'success'); this.reset();">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Full Name</label>
+              <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email Address</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="your@email.com" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-phone" class="form-label">Phone Number</label>
+              <input type="tel" id="contact-phone" class="form-control" placeholder="+1 (800) 123-4567" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Subject</label>
+              <select id="contact-subject" class="form-control" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option>Product Inquiry</option>
+                <option>Partnership</option>
+                <option>Support</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Your Message</label>
+            <textarea id="contact-message" class="form-control" rows="5" placeholder="How can we help?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;font-size:0.95rem;padding:0.9rem;">
+            Send Message
+          </button>
+        </form>
+        <div class="consult-card">
+          <h3 style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;margin-bottom:0.4rem;">Free Healthcare Consultation</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem;">Schedule a free 30-minute call with our pharmaceutical expert. No commitment required.</p>
+          <a href="tel:+18001234567" class="btn btn-primary" style="font-size:0.85rem;padding:0.65rem 1.4rem;">
+            Book Free Call
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Info + Map -->
+      <div data-anim="fade-left">
+        <div class="contact-info-card">
+          <h2 style="font-family:var(--font-heading);font-size:1.5rem;font-weight:800;margin-bottom:1.5rem;">Contact Information</h2>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Headquarters</div>
+              <div class="contact-info-val">123 Pharma Way, Innovation Park<br>San Francisco, CA 94107</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15v1.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Phone</div>
+              <div class="contact-info-val"><a href="tel:+18001234567" style="color:inherit;">+1 (800) 123-4567</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Email</div>
+              <div class="contact-info-val"><a href="mailto:contact@stacklypharma.com" style="color:var(--primary);">contact@stacklypharma.com</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Working Hours</div>
+              <div class="contact-info-val">Mon–Fri: 9am – 6pm EST<br><span style="color:var(--text-secondary);font-size:0.82rem;">24/7 support available for partners</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-embed">
+          <iframe title="STACKLY PHARMA Office Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0191295286466!2d-122.3995878239063!3d37.76615551265819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7fd770b93dfd%3A0xce4f29ed1ea21051!2sInnovation%20Park!5e0!3m2!1sen!2sus!4v1689255627255!5m2!1sen!2sus" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- BENTO FOOTER -->
+  <div class="bento-footer-wrapper">
+    <!-- The Giant Watermark stays in the background of the wrapper -->
+    <div class="footer-giant-brand" style="bottom:-5vw;">STACKLY</div>
+    
+    <footer class="bento-footer-box" id="main-footer" aria-label="Site footer">
+      <div class="footer-grid">
+        <!-- Logo & Desc -->
+        <div>
+          <div style="margin-bottom: var(--space-md);">
+            <a href="index.html" class="nav-logo">
+              <img src="images/logo-stackly.webp" alt="STACKLY PHARMA" style="height:36px;width:auto;" />
+            </a>
+          </div>
+          <p class="footer-desc">Leading pharmaceutical company dedicated to innovative drug research, manufacturing, and global distribution of life-saving medications.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Links Column 1 -->
+        <div>
+          <div class="footer-title">Product</div>
+          <ul class="footer-links">
+            <li><a href="products.html">Medicines</a></li>
+            <li><a href="products.html">Supplements</a></li>
+            <li><a href="products.html">Equipment</a></li>
+            <li><a href="products.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 2 -->
+        <div>
+          <div class="footer-title">Resources</div>
+          <ul class="footer-links">
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contact.html">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 3 -->
+        <div>
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Partners</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 STACKLY PHARMA. All rights reserved.</p>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="#" style="color:var(--text-secondary); text-decoration:underline;">Privacy Policy</a>
+          <a href="#" style="color:var(--text-secondary); text-decoration:underline;">Terms of Service</a>
+          <a href="#" style="color:var(--text-secondary); text-decoration:underline;">Cookie Settings</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+<div id="toast-container" aria-live="polite"></div>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
