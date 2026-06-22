@@ -53,14 +53,22 @@
     <div class="error-code">404</div>
     <h1 class="error-title">Page Not Found</h1>
     <p class="error-desc">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back to the right path.</p>
-    <a href="index.html" class="btn btn-primary btn-lg">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:0.5rem;"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      Back to Home
-    </a>
+    <div style="display:flex;gap:1rem;justify-content:center;">
+      <button onclick="history.back()" class="btn btn-outline btn-lg">
+        Go Back
+      </button>
+      <a href="index.html" class="btn btn-primary btn-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:0.5rem;"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Home
+      </a>
+    </div>
   </div>
 </div>
 
 <script src="js/auth.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
+

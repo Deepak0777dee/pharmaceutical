@@ -1033,25 +1033,67 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-link:hover { gap: 0.6rem; }
 
-/* ---------- Testimonials ---------- */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
+/* ---------- Testimonials Marquee ---------- */
+.testimonials-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 1rem 0;
+}
+
+/* Gradient fade at edges */
+.testimonials-marquee-wrapper::before,
+.testimonials-marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.testimonials-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+.testimonials-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.testimonials-marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollMarquee 40s linear infinite;
+}
+
+.testimonials-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 1rem)); } /* Shift by half because content is duplicated */
 }
 
 .testimonial-card {
   background: #fff;
-  border-radius: var(--radius-2xl);
-  border: 1px solid rgba(0,0,0,0.05);
-  box-shadow: var(--clay-shadow-sm);
   padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0,0,0,0.03);
   transition: all var(--transition-base);
+  width: 400px;
+  flex-shrink: 0;
 }
 
 .testimonial-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--clay-shadow-hover);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
 .testimonial-stars {
@@ -1249,7 +1291,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all var(--transition-fast);
 }
 
-.footer-links a:hover { color: #fff; padding-left: 4px; }
+.footer-links a:hover { color: var(--primary); padding-left: 4px; }
 
 .footer-newsletter-input {
   display: flex;
@@ -1295,12 +1337,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .bento-footer-wrapper {
   background: var(--bg-alt);
-  padding-top: 150px;
-  padding-bottom: 12vw; /* Space for the huge brand name */
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
   padding-left: var(--container-padding);
   padding-right: var(--container-padding);
   position: relative;
   overflow: hidden;
+}
+
+.bento-footer-wrapper.with-cta {
+  padding-top: 150px;
 }
 .bento-footer-box {
   background: #fff;
@@ -1312,6 +1358,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   border: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
 }
 
 .footer-giant-brand {
@@ -1324,9 +1371,9 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
   user-select: none;
   letter-spacing: -0.02em;
-  opacity: 0.8;
+  opacity: 0.08; /* Make it more of a watermark */
   position: absolute;
-  bottom: -3vw;
+  bottom: -4vw;
   left: 0;
   width: 100%;
   z-index: 1;
@@ -2732,4 +2779,47 @@ textarea.form-control {
   .form-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- GSAP Text Animations ---------- */
+.word-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 0.25em; /* Space between words */
+  vertical-align: top;
+}
+.word-anim {
+  display: inline-block;
+  /* GSAP will transform this */
+}
+
+/* Aceternity Split Hover Effect */
+.hover-link {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+}
+.hover-text-top,
+.hover-text-bottom {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.hover-text-top {
+  transform: translateY(0%);
+}
+.hover-text-bottom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(0%);
+  color: var(--primary);
+}
+.hover-link:hover .hover-text-top {
+  transform: translateY(-100%);
+}
+.hover-link:hover .hover-text-bottom {
+  transform: translateY(-100%);
 }

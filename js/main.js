@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ---------- GSAP-Style Text Reveal ---------- */
 document.addEventListener('DOMContentLoaded', () => {
-  const revealElements = document.querySelectorAll('.gsap-reveal');
+  const revealElements = document.querySelectorAll('h1, h2, .section-title, .hero-title, .gsap-reveal');
   
   revealElements.forEach(el => {
     function wrapWords(node) {
@@ -464,21 +464,47 @@ document.addEventListener('DOMContentLoaded', () => {
     Array.from(el.childNodes).forEach(wrapWords);
   });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const words = entry.target.querySelectorAll('.word-anim');
-        words.forEach((word, idx) => {
-          setTimeout(() => {
-            word.classList.add('visible');
-          }, idx * 40);
-        });
-        observer.unobserve(entry.target);
-      }
+  // Ensure GSAP and ScrollTrigger are available before executing
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    revealElements.forEach(el => {
+      const words = el.querySelectorAll('.word-anim');
+      
+      // Override CSS default hidden state if any, let GSAP handle it
+      gsap.set(words, { opacity: 1, y: 0, transform: 'none' });
+
+      gsap.from(words, {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.04,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      });
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  
-  revealElements.forEach(el => observer.observe(el));
+  } else {
+    // Fallback if GSAP fails to load
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const words = entry.target.querySelectorAll('.word-anim');
+          words.forEach((word, idx) => {
+            setTimeout(() => {
+              word.classList.add('visible');
+            }, idx * 40);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    
+    revealElements.forEach(el => observer.observe(el));
+  }
 });
 
 /* ---------- Scroll Container 3D Flip ---------- */
@@ -511,4 +537,81 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('particles-canvas')) {
     initParticles('particles-canvas');
   }
+});
+
+/* ---------- Aceternity UI Text Generate (Paragraphs) ---------- */
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  const textGenElements = document.querySelectorAll('.hero-desc, .section-desc, .about-desc, .auth-subtitle');
+  
+  textGenElements.forEach(el => {
+    // Split into characters for typewriter effect
+    const text = el.innerText;
+    el.innerHTML = ''; // Clear existing text
+    
+    // Split into words, then characters to maintain word wrapping
+    const words = text.split(' ');
+    words.forEach((word, wordIndex) => {
+      const wordSpan = document.createElement('span');
+      wordSpan.style.display = 'inline-block';
+      wordSpan.style.whiteSpace = 'nowrap';
+      
+      const chars = word.split('');
+      chars.forEach(char => {
+        const charSpan = document.createElement('span');
+        charSpan.textContent = char;
+        charSpan.style.opacity = '0';
+        charSpan.style.display = 'inline-block';
+        charSpan.className = 'text-gen-char';
+        wordSpan.appendChild(charSpan);
+      });
+      
+      el.appendChild(wordSpan);
+      
+      // Add space after word, except for the last word
+      if (wordIndex < words.length - 1) {
+        const spaceSpan = document.createElement('span');
+        spaceSpan.innerHTML = '&nbsp;';
+        el.appendChild(spaceSpan);
+      }
+    });
+
+    // Animate
+    gsap.to(el.querySelectorAll('.text-gen-char'), {
+      opacity: 1,
+      duration: 0.1,
+      stagger: 0.015,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 90%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+});
+
+/* ---------- Aceternity UI Split Hover Links ---------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.nav-links a');
+  
+  links.forEach(link => {
+    const text = link.textContent;
+    if (text.trim() === '') return;
+    
+    link.textContent = ''; // clear original
+    link.classList.add('hover-link');
+    
+    const topText = document.createElement('span');
+    topText.className = 'hover-text-top';
+    topText.textContent = text;
+    
+    const bottomText = document.createElement('span');
+    bottomText.className = 'hover-text-bottom';
+    bottomText.textContent = text;
+    
+    link.appendChild(topText);
+    link.appendChild(bottomText);
+  });
 });
