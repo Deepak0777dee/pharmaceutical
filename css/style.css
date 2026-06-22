@@ -1508,21 +1508,61 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
   color: var(--text);
   background: var(--bg);
-  border: 2px solid transparent;
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: var(--radius-md);
   outline: none;
-  box-shadow: var(--clay-shadow-pressed);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
   transition: all var(--transition-fast);
+}
+
+.auth-form .form-control {
+  background: rgba(0, 0, 0, 0.03); /* slightly darker background to stand out on frosted glass */
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .form-control:focus {
   border-color: var(--primary);
-  box-shadow:
-    var(--clay-shadow-pressed),
-    0 0 0 3px rgba(108, 99, 255, 0.1);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
 }
 
 .form-control::placeholder { color: var(--text-tertiary); }
+
+/* Input with Icon Styles */
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon .input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-tertiary);
+  pointer-events: none;
+}
+
+.input-with-icon .form-control {
+  padding-left: 2.8rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.password-toggle:hover {
+  color: var(--primary);
+}
 
 .form-control.is-invalid {
   border-color: var(--danger);
@@ -1538,7 +1578,7 @@ h1, h2, h3, h4, h5, h6 {
     0 0 0 3px rgba(34, 197, 94, 0.08);
 }
 
-textarea.form-control { resize: vertical; min-height: 100px; }
+textarea.form-control { resize: vertical; min-height: 100px; padding-left: 1rem; }
 
 .error-msg {
   font-size: 0.75rem;
