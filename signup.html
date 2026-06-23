@@ -180,10 +180,8 @@
     if (fname && lname && email && password && document.getElementById('terms').checked) {
       const fullName = `${fname} ${lname}`;
       authSignup(fullName, email, role, password);
-      // Automatically log them in after signup
-      authLogin(fullName, email, role, password);
-      window.showToast('Account created successfully! Redirecting...', 'success');
-      setTimeout(() => { window.location.href = 'dashboard.html'; }, 1500);
+      window.showToast('Account created! Please log in to continue.', 'success');
+      setTimeout(() => { window.location.href = 'login.html'; }, 1500);
     }
   });
 </script>

@@ -620,3 +620,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+/* ---------- Always Start at Top on Reload ---------- */
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  setTimeout(() => {
+    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+  }, 300);
+});
