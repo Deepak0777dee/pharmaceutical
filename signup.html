@@ -121,6 +121,9 @@
           <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required 
                  oninvalid="this.setCustomValidity('Please confirm your password.')" 
                  oninput="this.setCustomValidity('')">
+          <button type="button" class="password-toggle" id="toggleConfirmPassword" aria-label="Toggle confirm password visibility">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
         </div>
       </div>
 
@@ -148,6 +151,13 @@
 
   document.getElementById('togglePassword').addEventListener('click', function() {
     const pwd = document.getElementById('password');
+    const type = pwd.getAttribute('type') === 'password' ? 'text' : 'password';
+    pwd.setAttribute('type', type);
+    this.style.color = type === 'text' ? 'var(--primary)' : 'var(--text-secondary)';
+  });
+
+  document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
+    const pwd = document.getElementById('confirmPassword');
     const type = pwd.getAttribute('type') === 'password' ? 'text' : 'password';
     pwd.setAttribute('type', type);
     this.style.color = type === 'text' ? 'var(--primary)' : 'var(--text-secondary)';

@@ -32,7 +32,7 @@
     <div class="contact-grid">
 
       <!-- LEFT: Contact Form -->
-      <div data-anim="fade-right">
+      <div data-anim="fade-right" style="display:flex; flex-direction:column; height:100%;">
         <h2 style="font-family:var(--font-heading);font-size:1.8rem;font-weight:800;margin-bottom:1.5rem;">Send Us a Message</h2>
         <form id="contactForm" onsubmit="event.preventDefault(); window.showToast('Message sent successfully! We will get back to you soon.', 'success'); this.reset();">
           <div class="form-row">
@@ -48,7 +48,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="contact-phone" class="form-label">Phone Number</label>
-              <input type="tel" id="contact-phone" class="form-control" placeholder="+1 (800) 123-4567" autocomplete="tel" />
+              <input type="tel" id="contact-phone" class="form-control" placeholder="1234567890" autocomplete="tel" pattern="\d{10}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" title="Please enter exactly 10 digits" />
             </div>
             <div class="form-group">
               <label for="contact-subject" class="form-label">Subject</label>
@@ -69,7 +69,7 @@
             Send Message
           </button>
         </form>
-        <div class="consult-card">
+        <div class="consult-card" style="margin-top:auto;">
           <h3 style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;margin-bottom:0.4rem;">Free Healthcare Consultation</h3>
           <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem;">Schedule a free 30-minute call with our pharmaceutical expert. No commitment required.</p>
           <a href="tel:+18001234567" class="btn btn-primary" style="font-size:0.85rem;padding:0.65rem 1.4rem;">
@@ -79,7 +79,7 @@
       </div>
 
       <!-- RIGHT: Info + Map -->
-      <div data-anim="fade-left">
+      <div data-anim="fade-left" style="display:flex; flex-direction:column; height:100%;">
         <div class="contact-info-card">
           <h2 style="font-family:var(--font-heading);font-size:1.5rem;font-weight:800;margin-bottom:1.5rem;">Contact Information</h2>
           <div class="contact-info-item">
@@ -120,7 +120,7 @@
           </div>
         </div>
 
-        <div class="map-embed">
+        <div class="map-embed" style="margin-top:auto;">
           <iframe title="STACKLY PHARMA Office Location" src="https://maps.google.com/maps?q=MMR%20Complex,%20Chinna%20Thirupathi,%20Salem&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
@@ -154,7 +154,7 @@
           </div>
         </div>
 
-        <!-- Links Column 1 -->
+                <!-- Links Column 1 -->
         <div>
           <div class="footer-title">Product</div>
           <ul class="footer-links">
@@ -176,14 +176,15 @@
           </ul>
         </div>
 
-        <!-- Links Column 3 -->
+        <!-- Company Links -->
         <div>
           <div class="footer-title">Company</div>
           <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="404.html">Careers</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="404.html">Partners</a></li>
           </ul>
         </div>
       </div>

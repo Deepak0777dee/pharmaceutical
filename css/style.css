@@ -1361,7 +1361,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-.footer-giant-brand {
+.footer-giant-brand { pointer-events: none;
   font-family: var(--font-heading);
   font-size: 15vw;
   font-weight: 900;
@@ -1724,7 +1724,7 @@ textarea.form-control { resize: vertical; min-height: 100px; padding-left: 1rem;
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: var(--space-xl);
-  align-items: start;
+  align-items: stretch;
 }
 
 .dash-sidebar {
@@ -2173,7 +2173,7 @@ textarea.form-control { resize: vertical; min-height: 100px; padding-left: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3xl);
-  align-items: start;
+  align-items: stretch;
 }
 
 .contact-info-cards {
@@ -2601,7 +2601,7 @@ textarea.form-control { resize: vertical; min-height: 100px; padding-left: 1rem;
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-  .footer-giant-brand { font-size: 4rem; }
+  .footer-giant-brand { pointer-events: none; font-size: 4rem; }
 
   .title-404 { font-size: 5rem; }
   .subtitle-404 { font-size: 1.5rem; }
@@ -2863,3 +2863,5 @@ textarea.form-control {
 .hover-link:hover .hover-text-bottom {
   transform: translateY(-100%);
 }
+
+@media (max-width: 900px) { .nav-login-btn-wrap { display: none !important; } }
