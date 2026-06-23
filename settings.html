@@ -130,8 +130,8 @@
           </div>
           <div class="form-group">
             <label class="form-label">Phone Number <span style="color:var(--text-secondary);font-weight:400;font-size:0.8rem;">(optional)</span></label>
-            <input type="tel" class="form-control" id="settings-phone" placeholder="+1 234 567 8900" oninput="this.value = this.value.replace(/[^\d\+\s\-\(\)]/g, '')" />
-            <span class="field-error" id="err-phone">Please enter a valid phone number (10-15 digits).</span>
+            <input type="text" inputmode="numeric" class="form-control" id="settings-phone" placeholder="1234567890" maxlength="10" oninput="this.value = this.value.replace(/[^\d]/g, '')" onkeypress="if(this.value.length >= 10) return false;" />
+            <span class="field-error" id="err-phone">Please enter exactly 10 digits.</span>
           </div>
           <div class="form-group">
             <label class="form-label">New Password <span style="color:var(--text-secondary);font-weight:400;font-size:0.8rem;">(leave blank to keep current)</span></label>
@@ -212,10 +212,10 @@
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     valid = setError('settings-email', 'err-email', !emailOk) && valid;
 
-    // Phone: optional but must be valid if filled
+    // Phone: optional but must be valid 10 digits if filled
     const phone = document.getElementById('settings-phone').value.trim();
     if (phone !== '') {
-      const phoneOk = /^[\+]?[\d\s\-\(\)]{10,15}$/.test(phone);
+      const phoneOk = /^\d{10}$/.test(phone);
       valid = setError('settings-phone', 'err-phone', !phoneOk) && valid;
     } else {
       setError('settings-phone', 'err-phone', false);

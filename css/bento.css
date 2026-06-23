@@ -918,9 +918,14 @@
     overflow-x: hidden;
   }
 
-  /* Hide the right marquee column on mobile — it overflows the viewport */
+  /* Show the right marquee column on mobile, but strictly constrain its size so it doesn't overflow */
   .split-hero-right {
-    display: none;
+    display: grid;
+    height: 350px !important;
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
   }
 
   /* Make hero take full width when right column is hidden */
