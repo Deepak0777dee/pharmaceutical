@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,7 +12,8 @@
     .dash-main { padding: 2.5rem; }
     .user-profile-widget { text-align: center; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
     .user-avatar-large { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; font-size: 2.5rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: var(--clay-shadow); }
-    .user-name-display { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.2rem; }
+    .user-name-display { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.2rem; }
+    .user-email-display { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.5rem; word-break: break-all; }
     .user-role-display { font-size: 0.85rem; color: var(--primary); font-weight: 600; background: rgba(108,99,255,0.1); padding: 0.2rem 0.8rem; border-radius: 99px; display: inline-block; }
     
     .dash-nav { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -74,6 +75,7 @@
     <div class="user-profile-widget">
       <div class="user-avatar-large" id="dashAvatar">U</div>
       <div class="user-name-display" id="dashName">User Name</div>
+      <div class="user-email-display" id="dashEmail">user@example.com</div>
       <div class="user-role-display" id="dashRole">Member</div>
     </div>
     
@@ -171,6 +173,7 @@
     const user = authGetUser();
     if (user) {
       document.getElementById('dashName').textContent = user.name || 'User';
+      document.getElementById('dashEmail').textContent = user.email || '';
       document.getElementById('dashRole').textContent = user.role || 'Member';
       document.getElementById('dashAvatar').textContent = (user.name || 'U')[0].toUpperCase();
     }

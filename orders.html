@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -34,7 +34,7 @@
 
     .dash-section-title { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-main); }
     .recent-activity { background: #fff; border-radius: 20px; padding: 1.5rem; box-shadow: var(--clay-shadow); }
-    .activity-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .activity-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
     .activity-item:last-child { border-bottom: none; padding-bottom: 0; }
     .activity-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; }
     .activity-details h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem; }
@@ -51,6 +51,23 @@
       .dash-mobile-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 99; box-shadow: var(--clay-shadow); }
       .dash-mobile-logo img { height: 32px; width: auto; }
       .dash-mobile-hamburger { background: none; border: none; color: var(--text-main); cursor: pointer; padding: 0.5rem; display: flex; align-items: center; justify-content: center; }
+    }
+    @media (max-width: 600px) {
+      .dash-main { padding: 1rem; }
+      .dash-title { font-size: 1.4rem; }
+      .recent-activity { padding: 1rem; }
+      .activity-item { gap: 0.6rem; padding: 0.8rem 0; flex-wrap: wrap; }
+      .activity-icon { width: 36px; height: 36px; flex-shrink: 0; }
+      .activity-details { min-width: 0; flex: 1; }
+      .activity-details h4 { font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; }
+      .activity-details p { font-size: 0.78rem; }
+      .activity-time { font-size: 0.72rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+      .stat-card { padding: 1rem; gap: 0.75rem; }
+    }
+    @media (max-width: 400px) {
+      .activity-details h4 { max-width: 130px; }
+      .stats-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -110,23 +127,23 @@
     </div>
     
     <div class="recent-activity" style="margin-top:2rem;">
-      <div class="activity-item" style="align-items:center;">
+      <div class="activity-item">
         <div class="activity-icon" style="background:rgba(0,180,216,0.1);color:var(--secondary);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
         <div class="activity-details" style="flex:1;">
           <h4>Order #ORD-8823</h4>
           <p>1x CardioVex Pro, 2x Omega-3 Supplements</p>
-          <div class="activity-time" style="font-weight:600; color:var(--text-main); margin-top:0.4rem;">.00 � Today</div>
+          <div class="activity-time" style="font-weight:600; color:var(--text-main); margin-top:0.4rem;">.00  Today</div>
         </div>
-        <div style="font-size:0.8rem; font-weight:700; background:rgba(0,180,216,0.1); color:var(--secondary); padding:0.3rem 0.8rem; border-radius:12px;">Shipped</div>
+        <div style="flex-shrink:0; font-size:0.8rem; font-weight:700; background:rgba(0,180,216,0.1); color:var(--secondary); padding:0.3rem 0.8rem; border-radius:12px; margin-right:0.75rem; white-space:nowrap;">Shipped</div>
       </div>
-      <div class="activity-item" style="align-items:center;">
+      <div class="activity-item">
         <div class="activity-icon" style="background:rgba(16,185,129,0.1);color:var(--tertiary);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
         <div class="activity-details" style="flex:1;">
           <h4>Order #ORD-8710</h4>
           <p>1x Cellular Nutrition Monthly Pack</p>
-          <div class="activity-time" style="font-weight:600; color:var(--text-main); margin-top:0.4rem;">.00 � Sep 28, 2025</div>
+          <div class="activity-time" style="font-weight:600; color:var(--text-main); margin-top:0.4rem;">.00  Sep 28, 2025</div>
         </div>
-        <div style="font-size:0.8rem; font-weight:700; background:rgba(16,185,129,0.1); color:var(--tertiary); padding:0.3rem 0.8rem; border-radius:12px;">Delivered</div>
+        <div style="flex-shrink:0; font-size:0.8rem; font-weight:700; background:rgba(16,185,129,0.1); color:var(--tertiary); padding:0.3rem 0.8rem; border-radius:12px; margin-right:0.75rem; white-space:nowrap;">Delivered</div>
       </div>
     </div>
   </main>

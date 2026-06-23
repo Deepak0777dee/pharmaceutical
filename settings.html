@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -52,6 +52,11 @@
       .dash-mobile-logo img { height: 32px; width: auto; }
       .dash-mobile-hamburger { background: none; border: none; color: var(--text-main); cursor: pointer; padding: 0.5rem; display: flex; align-items: center; justify-content: center; }
     }
+    /* Validation styles */
+    .field-error { font-size: 0.78rem; color: #ef4444; margin-top: 0.3rem; display: none; }
+    .form-control.invalid { border-color: #ef4444 !important; background: rgba(239,68,68,0.04); }
+    .form-control.valid { border-color: #10b981 !important; }
+    .user-email-display { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.5rem; word-break: break-all; }
   </style>
 </head>
 <body>
@@ -74,6 +79,7 @@
     <div class="user-profile-widget">
       <div class="user-avatar-large" id="dashAvatar">U</div>
       <div class="user-name-display" id="dashName">User Name</div>
+      <div class="user-email-display" id="dashEmail"></div>
       <div class="user-role-display" id="dashRole">Member</div>
     </div>
     
@@ -110,38 +116,42 @@
     </div>
     
     <div class="recent-activity" style="margin-top:2rem;">
-      <form onsubmit="event.preventDefault(); window.showToast('Settings saved successfully!', 'success');">
+      <form id="settingsForm" onsubmit="return validateSettings(event)">
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr));gap:1.5rem;margin-bottom:2rem;">
           <div class="form-group">
-            <label class="form-label">Full Name</label>
-            <input type="text" class="form-control" value="User" id="settings-name" />
+            <label class="form-label">Full Name <span style="color:#ef4444">*</span></label>
+            <input type="text" class="form-control" id="settings-name" placeholder="Enter your full name" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" />
+            <span class="field-error" id="err-name">Please enter your full name (letters only, at least 2 characters).</span>
           </div>
           <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" class="form-control" value="user@example.com" id="settings-email" />
+            <label class="form-label">Email Address <span style="color:#ef4444">*</span></label>
+            <input type="email" class="form-control" id="settings-email" placeholder="Enter your email" />
+            <span class="field-error" id="err-email">Please enter a valid email address.</span>
           </div>
           <div class="form-group">
-            <label class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" placeholder="+1 234 567 8900" />
+            <label class="form-label">Phone Number <span style="color:var(--text-secondary);font-weight:400;font-size:0.8rem;">(optional)</span></label>
+            <input type="tel" class="form-control" id="settings-phone" placeholder="+1 234 567 8900" oninput="this.value = this.value.replace(/[^\d\+\s\-\(\)]/g, '')" />
+            <span class="field-error" id="err-phone">Please enter a valid phone number (10-15 digits).</span>
           </div>
           <div class="form-group">
-            <label class="form-label">New Password</label>
-            <input type="password" class="form-control" placeholder="��������" />
+            <label class="form-label">New Password <span style="color:var(--text-secondary);font-weight:400;font-size:0.8rem;">(leave blank to keep current)</span></label>
+            <input type="password" class="form-control" id="settings-password" placeholder="Min. 8 chars, 1 uppercase, 1 number" />
+            <span class="field-error" id="err-password">Password must be at least 8 characters with 1 uppercase letter and 1 number.</span>
           </div>
         </div>
         
         <h4 style="font-family:var(--font-heading); margin-bottom:1rem; font-size:1.1rem;">Preferences</h4>
         <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
           <label style="display:flex; align-items:center; gap:0.8rem; cursor:pointer;">
-            <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--primary);" />
+            <input type="checkbox" id="pref-email" checked style="width:18px; height:18px; accent-color:var(--primary);" />
             <span style="font-size:0.95rem; color:var(--text-main);">Receive Order Updates via Email</span>
           </label>
           <label style="display:flex; align-items:center; gap:0.8rem; cursor:pointer;">
-            <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--primary);" />
+            <input type="checkbox" id="pref-sms" checked style="width:18px; height:18px; accent-color:var(--primary);" />
             <span style="font-size:0.95rem; color:var(--text-main);">Receive Prescription Refill Reminders (SMS)</span>
           </label>
           <label style="display:flex; align-items:center; gap:0.8rem; cursor:pointer;">
-            <input type="checkbox" style="width:18px; height:18px; accent-color:var(--primary);" />
+            <input type="checkbox" id="pref-newsletter" style="width:18px; height:18px; accent-color:var(--primary);" />
             <span style="font-size:0.95rem; color:var(--text-main);">Subscribe to STACKLY PHARMA Newsletter</span>
           </label>
         </div>
@@ -164,9 +174,68 @@
     const user = authGetUser();
     if (user) {
       document.getElementById('dashName').textContent = user.name || 'User';
+      document.getElementById('dashEmail').textContent = user.email || '';
       document.getElementById('dashRole').textContent = user.role || 'Member';
       document.getElementById('dashAvatar').textContent = (user.name || 'U')[0].toUpperCase();
+      // Pre-fill settings form with user data
+      document.getElementById('settings-name').value = user.name || '';
+      document.getElementById('settings-email').value = user.email || '';
     }
+  }
+
+  function setError(inputId, errId, show) {
+    const input = document.getElementById(inputId);
+    const err = document.getElementById(errId);
+    if (show) {
+      input.classList.add('invalid');
+      input.classList.remove('valid');
+      err.style.display = 'block';
+    } else {
+      input.classList.remove('invalid');
+      input.classList.add('valid');
+      err.style.display = 'none';
+    }
+    return !show;
+  }
+
+  function validateSettings(e) {
+    e.preventDefault();
+    let valid = true;
+
+    // Full Name: required, min 2 chars, letters only
+    const name = document.getElementById('settings-name').value.trim();
+    const nameOk = name.length >= 2 && /^[a-zA-Z\s]+$/.test(name);
+    valid = setError('settings-name', 'err-name', !nameOk) && valid;
+
+    // Email: required, valid format
+    const email = document.getElementById('settings-email').value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    valid = setError('settings-email', 'err-email', !emailOk) && valid;
+
+    // Phone: optional but must be valid if filled
+    const phone = document.getElementById('settings-phone').value.trim();
+    if (phone !== '') {
+      const phoneOk = /^[\+]?[\d\s\-\(\)]{10,15}$/.test(phone);
+      valid = setError('settings-phone', 'err-phone', !phoneOk) && valid;
+    } else {
+      setError('settings-phone', 'err-phone', false);
+    }
+
+    // Password: optional but must be strong if filled
+    const pwd = document.getElementById('settings-password').value;
+    if (pwd !== '') {
+      const pwdOk = pwd.length >= 8 && /[A-Z]/.test(pwd) && /[0-9]/.test(pwd);
+      valid = setError('settings-password', 'err-password', !pwdOk) && valid;
+    } else {
+      setError('settings-password', 'err-password', false);
+    }
+
+    if (valid) {
+      window.showToast('Settings saved successfully!', 'success');
+    } else {
+      window.showToast('Please fix the errors before saving.', 'error');
+    }
+    return false;
   }
 
   const dashMenuBtn = document.querySelector('.dash-mobile-hamburger');

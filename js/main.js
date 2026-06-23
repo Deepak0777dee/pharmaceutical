@@ -20,10 +20,25 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar');
   if (navbar) {
+    let lastScrollY = window.scrollY;
+
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      // Toggle scrolled class for background
+      navbar.classList.toggle('scrolled', currentScrollY > 50);
+
+      // Hide on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        navbar.classList.add('nav-hidden');
+      } else {
+        navbar.classList.remove('nav-hidden');
+      }
+
+      lastScrollY = currentScrollY;
     }, { passive: true });
   }
+
 
   // Mobile hamburger
   const hamburger = document.querySelector('.nav-hamburger');
@@ -604,26 +619,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* ---------- Aceternity UI Split Hover Links ---------- */
-document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('.nav-links a');
-  
-  links.forEach(link => {
-    const text = link.textContent;
-    if (text.trim() === '') return;
-    
-    link.textContent = ''; // clear original
-    link.classList.add('hover-link');
-    
-    const topText = document.createElement('span');
-    topText.className = 'hover-text-top';
-    topText.textContent = text;
-    
-    const bottomText = document.createElement('span');
-    bottomText.className = 'hover-text-bottom';
-    bottomText.textContent = text;
-    
-    link.appendChild(topText);
-    link.appendChild(bottomText);
-  });
-});
+
