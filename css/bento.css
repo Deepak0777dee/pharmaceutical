@@ -905,4 +905,42 @@
     flex-direction: column;
     gap: var(--space-sm);
   }
+
+  /* ---- Mobile Horizontal Scroll Fix ---- */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .bento-container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    overflow-x: hidden;
+  }
+
+  /* Hide the right marquee column on mobile — it overflows the viewport */
+  .split-hero-right {
+    display: none;
+  }
+
+  /* Make hero take full width when right column is hidden */
+  .split-hero {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .split-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .split-hero-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .split-hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
